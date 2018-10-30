@@ -14,3 +14,5 @@
 
 ### 访问http://localhost:6090/hystrix.stream 也会不断的显示ping
 
+![](../images/HystrixStream.png)
+
