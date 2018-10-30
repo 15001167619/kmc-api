@@ -73,6 +73,8 @@
         <druid.version>1.1.10</druid.version>
         <mysql.version>6.0.6</mysql.version>
         <eureka.version>1.4.6.RELEASE</eureka.version>
+        <admin-starter-client.version>2.0.4</admin-starter-client.version>
+        <admin-server-ui-login.version>1.5.7</admin-server-ui-login.version>
 
     </properties>
 
@@ -107,6 +109,7 @@
         <module>api-eureka</module>
         <module>api-producer</module>
         <module>api-rest</module>
+        <module>api-admin</module>
     </modules>
 
     <!--依赖管理-->

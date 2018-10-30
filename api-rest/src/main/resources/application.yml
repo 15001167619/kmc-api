@@ -9,6 +9,15 @@ spring:
     user:
       name: admin
       password: pwd666
+  boot:
+    admin:
+      client:
+        url: http://localhost:8000
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 ###################  项目启动端口  ###################
 server:
   port: 6090

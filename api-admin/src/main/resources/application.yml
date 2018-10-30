@@ -1,0 +1,35 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: admin-server
+  security:
+    user:
+      name: admin
+      password: pwd666
+  profiles:
+    active: dev
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    ip-address: ip
+    prefer-ip-address: true
+    hostname: localhost
+  client:
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:6080/eureka/
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+logging:
+  file: G:/mylog/api-admin.log

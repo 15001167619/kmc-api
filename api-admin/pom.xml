@@ -7,56 +7,61 @@
     <parent>
         <artifactId>kmc-api</artifactId>
         <groupId>com.kangmochou</groupId>
-        <version>${kmc.version}</version>
+        <version>2.0.0</version>
     </parent>
 
     <groupId>com.kangmochou.kmc-api</groupId>
-    <artifactId>api-rest</artifactId>
+    <artifactId>api-admin</artifactId>
     <version>${kmc.version}</version>
     <packaging>jar</packaging>
 
-    <name>api-rest</name>
-    <description>api-rest 服务消费者者 </description>
-
+    <name>api-admin</name>
+    <description>康莫愁 api admin监控 </description>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
             <version>${eureka.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-client</artifactId>
+            <version>2.0.4</version>
+        </dependency>
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-server</artifactId>
+            <version>2.0.4</version>
+        </dependency>
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-server-ui</artifactId>
+            <version>2.0.4</version>
+        </dependency>
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-server-ui-login</artifactId>
+            <version>1.5.7</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-hystrix</artifactId>
-            <version>${eureka.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
+            <artifactId>spring-cloud-dependencies</artifactId>
+            <version>${spring-cloud.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
         </dependency>
     </dependencies>
 
     <build>
-        <finalName>api-rest</finalName>
+        <finalName>api-admin</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring.boot.version}</version>
                 <configuration>
-                    <mainClass>com.kmspring-cloud-starter-ribbonc.rest.ApiRestApplication</mainClass>
+                    <mainClass>com.kmc.admin.ApiAdminApplication</mainClass>
                     <fork>true</fork>
                 </configuration>
                 <executions>
@@ -87,5 +92,6 @@
             </plugin>
         </plugins>
     </build>
+
 
 </project>
