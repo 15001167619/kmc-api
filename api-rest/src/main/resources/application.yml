@@ -4,7 +4,7 @@ spring:
   application:
     name: api-server-rest
   profiles:
-      active: dev
+    active: dev
   security:
     user:
       name: admin

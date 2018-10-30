@@ -2,7 +2,7 @@ spring:
   application:
     name: api-eureka
   profiles:
-      active: dev
+    active: dev
   security:
     user:
       name: admin
