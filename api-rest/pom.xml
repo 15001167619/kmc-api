@@ -11,18 +11,15 @@
     </parent>
 
     <groupId>com.kangmochou.kmc-api</groupId>
-    <artifactId>api-producer</artifactId>
+    <artifactId>api-rest</artifactId>
     <version>${kmc.version}</version>
     <packaging>jar</packaging>
 
-    <name>api-producer</name>
-    <description>api-producer 服务提供者 </description>
 
     <dependencies>
         <dependency>
-            <groupId>com.kangmochou.kmc-api</groupId>
-            <artifactId>api-common</artifactId>
-            <version>${kmc.version}</version>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -33,17 +30,27 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-hystrix</artifactId>
+            <version>${eureka.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
+            <version>${eureka.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
-        <finalName>${project.name}</finalName>
+        <finalName>api-rest</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring.boot.version}</version>
                 <configuration>
-                    <mainClass>com.kmc.producer.ApiProducerApplication</mainClass>
+                    <mainClass>com.kmspring-cloud-starter-ribbonc.rest.ApiRestApplication</mainClass>
                     <fork>true</fork>
                 </configuration>
                 <executions>
@@ -65,14 +72,14 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven.surefire.version}</version>
                 <configuration>
-                    <finalName>${project.name}</finalName>
+                    <skip>true</skip>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
 
 </project>

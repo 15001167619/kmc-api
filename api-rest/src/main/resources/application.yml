@@ -1,0 +1,31 @@
+###################  spring配置  ###################
+###################  应用服务名称  ###################
+spring:
+  application:
+    name: api-server-rest
+  profiles:
+      active: dev
+  security:
+    user:
+      name: admin
+      password: pwd666
+###################  项目启动端口  ###################
+server:
+  port: 6090
+
+
+feign:
+  hystrix:
+    enabled: true
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:6080/eureka/
+
+logging:
+  file: G:/mylog/api-rest.log
+
+---

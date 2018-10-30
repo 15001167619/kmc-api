@@ -117,6 +117,7 @@
         <module>api-common</module>
         <module>api-eureka</module>
         <module>api-producer</module>
+        <module>api-rest</module>
     </modules>
 
     <!--依赖管理-->
