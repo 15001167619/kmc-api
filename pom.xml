@@ -75,6 +75,9 @@
         <eureka.version>1.4.6.RELEASE</eureka.version>
         <admin-starter-client.version>2.0.4</admin-starter-client.version>
         <admin-server-ui-login.version>1.5.7</admin-server-ui-login.version>
+        <admin-starter-server.version>2.0.4</admin-starter-server.version>
+        <spring-cloud-starter-turbine.version>1.4.6.RELEASE</spring-cloud-starter-turbine.version>
+        <spring-cloud-starter-hystrix-dashboard.version>1.4.6.RELEASE</spring-cloud-starter-hystrix-dashboard.version>
 
     </properties>
 
@@ -110,6 +113,7 @@
         <module>api-producer</module>
         <module>api-rest</module>
         <module>api-admin</module>
+        <module>api-turbine</module>
     </modules>
 
     <!--依赖管理-->

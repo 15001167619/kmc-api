@@ -1,10 +1,8 @@
-###################  spring配置  ###################
-###################  应用服务名称  ###################
 spring:
   application:
-    name: api-rest-doctor
+    name: api-turbine
   profiles:
-    active: dev
+      active: dev
   security:
     user:
       name: admin
@@ -18,23 +16,24 @@ management:
     web:
       exposure:
         include: "*"
-###################  项目启动端口  ###################
+        
 server:
-  port: 6090
+  port: 6086
 
-
-feign:
-  hystrix:
-    enabled: true
+turbine:
+  appConfig: api-rest-doctor,api-rest-patient
+  aggregator:
+    clusterConfig: default
+  clusterNameExpression: new String("default")
 
 eureka:
   instance:
-    hostname: localhost
+      hostname: localhost
   client:
     serviceUrl:
       defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:6080/eureka/
 
 logging:
-  file: G:/mylog/api-doctor.log
+  file: G:/mylog/api-patient.log
 
 ---
