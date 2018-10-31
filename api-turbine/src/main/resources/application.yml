@@ -34,6 +34,6 @@ eureka:
       defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:6080/eureka/
 
 logging:
-  file: G:/mylog/api-patient.log
+  file: G:/mylog/api-turbine.log
 
 ---

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2018/10/30 10:16
  */
 @RestController
+@RequestMapping(value = "user")
 public class ApiSysUserController {
 
     @Autowired

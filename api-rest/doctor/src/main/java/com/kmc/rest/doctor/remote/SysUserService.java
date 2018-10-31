@@ -19,6 +19,6 @@ public interface SysUserService {
      * @return user
      */
     @RequestMapping(value = "getUserInfo")
-    public String getUserInfo(@RequestParam(value = "id") Integer id);
+    String getUserInfo(@RequestParam(value = "id") Integer id);
 
 }
