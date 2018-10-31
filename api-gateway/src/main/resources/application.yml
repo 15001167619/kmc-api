@@ -21,11 +21,12 @@ server:
   port: 6088
 
 zuul:
-  prefix: /api
-  stripPrefix: true
+  prefix: /api                          # 开启全局 路径
+  stripPrefix: true                     #当stripPrefix=true（http://localhost:6088/api/doctor/user/getUserInfo?id=100&token=ee -> http://localhost:6090/doctor/user/getUserInfo?id=100）
+                                        #当stripPrefix=false（http://localhost:6088/api/doctor/user/getUserInfo?id=100&token=ee -> http://localhost:6090/api/doctor/user/getUserInfo?id=100）
   routes:
     doctor:                                           # 自定义， Zuul 唯一即可；当这里的值 = service-id时，service-id可以不写。
-      path: /doctor/**                                # 想要映射到的路径
+      path: /doctor/**                                # 想要映射到的路径 http://localhost:6090/doctor/user/getUserInfo?id=100 -> http://localhost:6090/user/getUserInfo?id=100
       service-id: api-rest-doctor                     # Eureka中的serviceId
     patient:
       path: /patient/**
