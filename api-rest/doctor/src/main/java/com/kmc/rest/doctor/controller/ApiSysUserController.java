@@ -2,8 +2,8 @@ package com.kmc.rest.doctor.controller;
 
 import com.kmc.rest.doctor.remote.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -17,8 +17,8 @@ public class ApiSysUserController {
     @Autowired
     private SysUserService sysUserService;
 
-    @RequestMapping(value = "getUserInfo/{id}")
-    public String userInfo(@PathVariable("id") Integer id) {
+    @RequestMapping(value = "getUserInfo")
+    public String userInfo(@RequestParam("id") Integer id) {
         return sysUserService.getUserInfo(id);
     }
 

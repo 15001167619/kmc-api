@@ -21,12 +21,14 @@ server:
   port: 6088
 
 zuul:
+  prefix: /api
+  stripPrefix: true
   routes:
     doctor:                                           # 自定义， Zuul 唯一即可；当这里的值 = service-id时，service-id可以不写。
-      path: /api/**                                   # 想要映射到的路径
+      path: /doctor/**                                # 想要映射到的路径
       service-id: api-rest-doctor                     # Eureka中的serviceId
     patient:
-      path: /api/**
+      path: /patient/**
       service-id: api-rest-patient
 
 
