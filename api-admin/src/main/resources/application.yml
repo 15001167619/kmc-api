@@ -5,11 +5,10 @@ spring:
     name: admin-server
   profiles:
     active: dev
-
   security:
     user:
-      name: root
-      password: password
+      name: admin
+      password: pwd666
 
 management:
   endpoints:
@@ -31,7 +30,7 @@ eureka:
   client:
     registryFetchIntervalSeconds: 5
     serviceUrl:
-      defaultZone: http://admin:pwd666@${eureka.instance.hostname}:6080/eureka/
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:6080/eureka/
 
 
 logging:
