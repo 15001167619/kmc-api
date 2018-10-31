@@ -1,6 +1,6 @@
-package com.kmc.rest.remote;
+package com.kmc.rest.doctor.remote;
 
-import com.kmc.rest.fallback.SysUserHystrixServiceImpl;
+import com.kmc.rest.doctor.fallback.SysUserHystrixServiceImpl;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;

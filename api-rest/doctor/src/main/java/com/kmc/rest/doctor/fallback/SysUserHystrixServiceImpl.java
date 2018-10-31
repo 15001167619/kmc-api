@@ -1,6 +1,6 @@
-package com.kmc.rest.fallback;
+package com.kmc.rest.doctor.fallback;
 
-import com.kmc.rest.remote.SysUserService;
+import com.kmc.rest.doctor.remote.SysUserService;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestParam;
 

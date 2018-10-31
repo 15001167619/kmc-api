@@ -1,19 +1,15 @@
-package com.kmc.rest.config;
+package com.kmc.api.rest.common.config;
 
 import com.netflix.hystrix.contrib.metrics.eventstream.HystrixMetricsStreamServlet;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 /**
  * @author 武海升
- * @date 2018/10/30 15:26
+ * @date 2018/10/31 10:03
  */
-@Configuration
-public class ServletRegistrationHystrixConfig {
+public class HystrixConfig {
 
-    @Bean
-    public ServletRegistrationBean getServlet() {
+    public static ServletRegistrationBean initServletRegistrationHystrixConfig(){
         HystrixMetricsStreamServlet streamServlet = new HystrixMetricsStreamServlet();
         ServletRegistrationBean registrationBean = new ServletRegistrationBean(streamServlet);
         registrationBean.setLoadOnStartup(1);

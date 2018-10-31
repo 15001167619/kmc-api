@@ -1,6 +1,6 @@
-package com.kmc.rest.controller;
+package com.kmc.rest.doctor.controller;
 
-import com.kmc.rest.remote.SysUserService;
+import com.kmc.rest.doctor.remote.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

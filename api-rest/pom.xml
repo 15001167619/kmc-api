@@ -3,6 +3,11 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <modules>
+        <module>doctor</module>
+        <module>patient</module>
+        <module>common</module>
+    </modules>
 
     <parent>
         <artifactId>kmc-api</artifactId>
@@ -13,10 +18,10 @@
     <groupId>com.kangmochou.kmc-api</groupId>
     <artifactId>api-rest</artifactId>
     <version>${kmc.version}</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
     <name>api-rest</name>
-    <description>api-rest 服务消费者者 </description>
+    <description>api-rest API服务消费者 </description>
 
 
     <dependencies>
@@ -57,22 +62,6 @@
     <build>
         <finalName>api-rest</finalName>
         <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring.boot.version}</version>
-                <configuration>
-                    <mainClass>com.kmspring-cloud-starter-ribbonc.rest.ApiRestApplication</mainClass>
-                    <fork>true</fork>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
