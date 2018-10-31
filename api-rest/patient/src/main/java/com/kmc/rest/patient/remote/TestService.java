@@ -19,6 +19,6 @@ public interface TestService {
      * @return user
      */
     @RequestMapping(value = "getTestName")
-    public String getTestName(@RequestParam(value = "name") String name);
+    String getTestName(@RequestParam(value = "name") String name);
 
 }
