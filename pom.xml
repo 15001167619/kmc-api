@@ -79,6 +79,8 @@
         <spring-cloud-starter-turbine.version>1.4.6.RELEASE</spring-cloud-starter-turbine.version>
         <spring-cloud-starter-hystrix-dashboard.version>1.4.6.RELEASE</spring-cloud-starter-hystrix-dashboard.version>
         <spring-cloud-starter-zuul.version>1.4.6.RELEASE</spring-cloud-starter-zuul.version>
+        <java-jwt.version>3.4.1</java-jwt.version>
+        <jjwt.version>0.9.1</jjwt.version>
 
     </properties>
 
@@ -116,6 +118,7 @@
         <module>api-admin</module>
         <module>api-turbine</module>
         <module>api-gateway</module>
+        <module>api-auth</module>
     </modules>
 
     <!--依赖管理-->
