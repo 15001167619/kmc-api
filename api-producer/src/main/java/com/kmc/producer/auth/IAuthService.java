@@ -1,7 +1,7 @@
 package com.kmc.producer.auth;
 
+import com.kmc.api.rest.common.auth.Credence;
 import com.kmc.common.auth.base.BaseVo;
-import com.kmc.common.auth.validator.dto.Credence;
 
 /**
  * @author 武海升

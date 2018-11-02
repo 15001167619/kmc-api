@@ -1,6 +1,6 @@
-package com.kmc.common.auth.parameters;
+package com.kmc.api.rest.common.auth.parameters;
 
-import com.kmc.common.auth.validator.dto.Credence;
+import com.kmc.api.rest.common.auth.Credence;
 import lombok.Data;
 
 /**

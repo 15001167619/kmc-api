@@ -120,7 +120,6 @@
         <module>api-admin</module>
         <module>api-turbine</module>
         <module>api-gateway</module>
-        <module>api-auth</module>
     </modules>
 
     <!--依赖管理-->

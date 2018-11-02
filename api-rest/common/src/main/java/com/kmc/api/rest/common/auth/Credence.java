@@ -1,10 +1,10 @@
-package com.kmc.common.auth.validator.dto;
+package com.kmc.api.rest.common.auth;
 
 /**
  * @author 武海升
  * @date 2018/11/2 9:27
  */
-public interface  Credence {
+public interface Credence {
 
     /**
      * 唯一凭证

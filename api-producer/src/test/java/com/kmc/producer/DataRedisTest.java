@@ -1,9 +1,5 @@
 package com.kmc.producer;
 
-import com.kmc.common.auth.parameters.AuthRequestImpl;
-import com.kmc.producer.auth.IAuthService;
-import com.kmc.producer.modules.mapper.SysUserMapper;
-import com.kmc.producer.modules.model.entity.SysUser;
 import com.kmc.producer.redis.IRedisService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;

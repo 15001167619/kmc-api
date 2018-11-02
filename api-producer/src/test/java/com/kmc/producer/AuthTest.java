@@ -1,7 +1,7 @@
 package com.kmc.producer;
 
+import com.kmc.api.rest.common.auth.parameters.AuthRequestImpl;
 import com.kmc.common.auth.base.BaseVo;
-import com.kmc.common.auth.parameters.AuthRequestImpl;
 import com.kmc.producer.auth.IAuthService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;

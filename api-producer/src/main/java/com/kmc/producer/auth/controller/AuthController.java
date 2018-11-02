@@ -1,6 +1,6 @@
 package com.kmc.producer.auth.controller;
 
-import com.kmc.common.auth.parameters.AuthRequestImpl;
+import com.kmc.api.rest.common.auth.parameters.AuthRequestImpl;
 import com.kmc.producer.auth.IAuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
