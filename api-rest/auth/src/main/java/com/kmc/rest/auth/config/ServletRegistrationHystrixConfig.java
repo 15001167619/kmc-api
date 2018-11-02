@@ -1,4 +1,4 @@
-package com.kmc.auth.config;
+package com.kmc.rest.auth.config;
 
 import com.kmc.api.rest.common.config.HystrixConfig;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;

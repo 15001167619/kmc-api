@@ -1,8 +1,7 @@
-package com.kmc.auth.fallback;
+package com.kmc.rest.auth.fallback;
 
-import com.alibaba.fastjson.JSON;
-import com.kmc.auth.remote.AuthService;
-import com.kmc.common.auth.parameters.AuthRequestImpl;
+import com.kmc.api.rest.common.auth.parameters.AuthRequestImpl;
+import com.kmc.rest.auth.remote.AuthService;
 import org.springframework.stereotype.Component;
 
 /**
@@ -14,7 +13,7 @@ public class AuthHystrixServiceImpl implements AuthService {
 
     @Override
     public String getAccessToken(AuthRequestImpl authRequest) {
-        return "服务异常.........."+JSON.toJSONString(authRequest);
+        return "服务异常..........";
     }
 
 }

@@ -5,60 +5,24 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>kmc-api</artifactId>
-        <groupId>com.kangmochou</groupId>
+        <artifactId>api-rest</artifactId>
+        <groupId>com.kangmochou.kmc-api</groupId>
         <version>${kmc.version}</version>
     </parent>
 
-    <groupId>com.kangmochou.kmc-api</groupId>
-    <artifactId>api-auth</artifactId>
+    <groupId>com.kangmochou.kmc-api-rest</groupId>
+    <artifactId>auth</artifactId>
     <version>${kmc.version}</version>
     <packaging>jar</packaging>
 
-    <name>api-auth</name>
+    <name>auth</name>
     <description>api-auth 安全服务</description>
 
     <dependencies>
         <dependency>
-            <groupId>com.kangmochou.kmc-api</groupId>
-            <artifactId>api-common</artifactId>
-            <version>${kmc.version}</version>
-        </dependency>
-        <dependency>
             <groupId>com.kangmochou.kmc-api-rest</groupId>
             <artifactId>common</artifactId>
             <version>${kmc.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka</artifactId>
-            <version>${eureka.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-hystrix</artifactId>
-            <version>${eureka.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>de.codecentric</groupId>
-            <artifactId>spring-boot-admin-starter-client</artifactId>
-            <version>${admin-starter-client.version}</version>
         </dependency>
     </dependencies>
 
@@ -70,7 +34,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring.boot.version}</version>
                 <configuration>
-                    <mainClass>com.kmc.auth.ApiAuthApplication</mainClass>
+                    <mainClass>com.kmc.rest.auth.ApiAuthApplication</mainClass>
                     <fork>true</fork>
                 </configuration>
                 <executions>

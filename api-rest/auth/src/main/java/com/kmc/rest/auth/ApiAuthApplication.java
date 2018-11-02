@@ -1,4 +1,4 @@
-package com.kmc.auth;
+package com.kmc.rest.auth;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
