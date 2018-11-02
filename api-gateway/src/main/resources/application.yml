@@ -31,6 +31,9 @@ zuul:
     patient:
       path: /patient/**
       service-id: api-rest-patient
+    auth:
+      path: /auth/**
+      service-id: api-rest-doctor
 
 
 eureka:

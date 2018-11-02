@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2018/11/2 9:50
  */
 @RestController
-@RequestMapping(value = "auth")
+@RequestMapping(value = "authorize")
 public class ApiAuthController {
 
     @Autowired
