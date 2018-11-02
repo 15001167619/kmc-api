@@ -2,7 +2,7 @@
 ###################  应用服务名称  ###################
 spring:
   application:
-    name: api-rest-doctor
+    name: api-rest-auth
   profiles:
     active: dev
   security:
