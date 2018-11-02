@@ -108,7 +108,7 @@ public class AuthServiceImpl implements IAuthService {
     }
 
     @Override
-    public String getSecurityInfo(Credence authRequest) {
+    public BaseVo getSecurityInfo(Credence authRequest) {
         BaseVo baseVo = new BaseVo();
         boolean validate = validate(authRequest);
         if (validate) {
@@ -121,10 +121,10 @@ public class AuthServiceImpl implements IAuthService {
             jsonObject.put("sign",sign);
             jsonObject.put("expiration",expiration);
             baseVo.setSuccessResult(100002,jsonObject);
-            return JSON.toJSONString(baseVo);
+            return baseVo;
         } else {
             baseVo.setResult(100001);
-            return JSON.toJSONString(baseVo);
+            return baseVo;
         }
     }
 

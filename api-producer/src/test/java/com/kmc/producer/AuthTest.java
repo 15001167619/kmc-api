@@ -1,5 +1,6 @@
 package com.kmc.producer;
 
+import com.kmc.common.auth.base.BaseVo;
 import com.kmc.common.auth.parameters.AuthRequestImpl;
 import com.kmc.producer.auth.IAuthService;
 import lombok.extern.slf4j.Slf4j;
@@ -28,8 +29,8 @@ public class AuthTest {
         authRequest.setMobile("15001167619");
         authRequest.setPassword("123456");
         authRequest.setUserType(1);
-        String sign = authService.getSecurityInfo(authRequest);
-        System.out.println("serverSign<===========>"+sign);
+        BaseVo securityInfo = authService.getSecurityInfo(authRequest);
+        System.out.println("serverSign<===========>"+securityInfo);
     }
 
 }

@@ -1,6 +1,6 @@
 package com.kmc.producer.auth;
 
-import com.kmc.common.auth.parameters.AuthRequestImpl;
+import com.kmc.common.auth.base.BaseVo;
 import com.kmc.common.auth.validator.dto.Credence;
 
 /**
@@ -51,5 +51,5 @@ public interface IAuthService {
      * @param credence 用户信息
      * @return boolean
      */
-    String getSecurityInfo(Credence credence);
+    BaseVo getSecurityInfo(Credence credence);
 }

@@ -17,7 +17,7 @@ public class AuthController {
     private IAuthService authService;
 
     @RequestMapping(value = "getAccessToken")
-    public String accessToken(AuthRequestImpl authRequest) {
+    public Object accessToken(AuthRequestImpl authRequest) {
         return authService.getSecurityInfo(authRequest);
     }
 
