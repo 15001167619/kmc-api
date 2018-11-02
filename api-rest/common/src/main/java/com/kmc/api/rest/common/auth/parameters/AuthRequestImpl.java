@@ -1,6 +1,7 @@
 package com.kmc.api.rest.common.auth.parameters;
 
 import com.kmc.api.rest.common.auth.Credence;
+import lombok.Builder;
 import lombok.Data;
 
 /**
@@ -8,6 +9,7 @@ import lombok.Data;
  * @date 2018/11/2 9:50
  */
 @Data
+@Builder
 public class AuthRequestImpl implements Credence {
 
     private Integer userType;

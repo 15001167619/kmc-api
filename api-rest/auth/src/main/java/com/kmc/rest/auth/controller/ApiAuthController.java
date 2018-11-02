@@ -1,9 +1,9 @@
 package com.kmc.rest.auth.controller;
 
-import com.kmc.api.rest.common.auth.parameters.AuthRequestImpl;
 import com.kmc.rest.auth.remote.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -18,8 +18,8 @@ public class ApiAuthController {
     private AuthService authService;
 
     @RequestMapping(value = "getAccessToken")
-    public Object accessToken(AuthRequestImpl authRequest) {
-        return authService.getAccessToken(authRequest);
+    public Object accessToken(@RequestParam("userType") Integer userType, @RequestParam("mobile")String mobile) {
+        return authService.getAccessToken(userType,mobile);
     }
 
 }

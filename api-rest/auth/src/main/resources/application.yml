@@ -20,7 +20,7 @@ management:
         include: "*"
 ###################  项目启动端口  ###################
 server:
-  port: 6000
+  port: 6092
 
 feign:
   hystrix:

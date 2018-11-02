@@ -1,9 +1,9 @@
 package com.kmc.rest.auth.remote;
 
-import com.kmc.api.rest.common.auth.parameters.AuthRequestImpl;
 import com.kmc.rest.auth.fallback.AuthHystrixServiceImpl;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * @author 武海升
@@ -14,10 +14,11 @@ public interface AuthService {
 
     /**
      * 获取 Token
-     * @param authRequest 用户信息
+     * @param userType 用户信息
+     * @param mobile 用户信息
      * @return accessToken
      */
     @RequestMapping(value = "getAccessToken")
-    String getAccessToken(AuthRequestImpl authRequest);
+    Object getAccessToken(@RequestParam("userType") Integer userType, @RequestParam("mobile")String mobile);
 
 }

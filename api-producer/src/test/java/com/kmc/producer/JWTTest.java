@@ -40,11 +40,7 @@ public class JWTTest {
     @Test
     public void getSign() {
         log.info("*******************");
-        AuthRequestImpl authRequest = new AuthRequestImpl();
-        authRequest.setMobile("15001167619");
-        authRequest.setPassword("123456");
-        authRequest.setUserType(0);
-        String sign = authService.getSign(authRequest);
+        String sign = authService.getSign(AuthRequestImpl.builder().userType(0).mobile("15001167619").build());
         System.out.println("serverSign<===========>"+sign);
     }
 

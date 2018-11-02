@@ -25,11 +25,7 @@ public class AuthTest {
     @Test
     public void getSecurityInfo() {
         log.info("*******************");
-        AuthRequestImpl authRequest = new AuthRequestImpl();
-        authRequest.setMobile("15001167619");
-        authRequest.setPassword("123456");
-        authRequest.setUserType(1);
-        BaseVo securityInfo = authService.getSecurityInfo(authRequest);
+        BaseVo securityInfo = authService.getSecurityInfo(AuthRequestImpl.builder().userType(0).mobile("15001167619").build());
         System.out.println("serverSign<===========>"+securityInfo);
     }
 

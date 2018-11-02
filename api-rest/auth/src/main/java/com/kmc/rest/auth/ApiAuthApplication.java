@@ -20,7 +20,7 @@ public class ApiAuthApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(ApiAuthApplication.class, args);
-        log.info("ApiDoctorApplication start-up is success!");
+        log.info("ApiAuthApplication start-up is success!");
     }
 
 }
