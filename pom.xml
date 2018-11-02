@@ -81,6 +81,8 @@
         <spring-cloud-starter-zuul.version>1.4.6.RELEASE</spring-cloud-starter-zuul.version>
         <java-jwt.version>3.4.1</java-jwt.version>
         <jjwt.version>0.9.1</jjwt.version>
+        <fastjson.version>1.2.51</fastjson.version>
+        <spring-boot-starter-data-redis.version>2.1.0.RELEASE</spring-boot-starter-data-redis.version>
 
     </properties>
 
