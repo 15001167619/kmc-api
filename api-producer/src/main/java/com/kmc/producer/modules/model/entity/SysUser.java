@@ -26,6 +26,8 @@ public class SysUser extends Model<SysUser> {
 
     private String userName;
 
+    private String mobile;
+
     @Override
     protected Serializable pkVal() {
         return this.userId;

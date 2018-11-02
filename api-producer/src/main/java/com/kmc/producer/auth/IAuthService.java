@@ -1,5 +1,6 @@
 package com.kmc.producer.auth;
 
+import com.kmc.common.auth.parameters.AuthRequestImpl;
 import com.kmc.common.auth.validator.dto.Credence;
 
 /**
@@ -38,4 +39,17 @@ public interface IAuthService {
      */
     Boolean isSignExpired(String sign);
 
+    /**
+     * 通过请求参数验证
+     * @param credence 用户信息
+     * @return boolean
+     */
+    boolean validate(Credence credence);
+    /**
+     * 校验 服务器端签名Sign 是否过期
+     *
+     * @param credence 用户信息
+     * @return boolean
+     */
+    String getSecurityInfo(Credence credence);
 }

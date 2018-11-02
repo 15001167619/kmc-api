@@ -18,6 +18,13 @@
     <name>api-gateway</name>
     <description>api-gateway 服务网关</description>
 
+    <!--版本号 -->
+    <properties>
+        <admin-starter-client.version>2.0.4</admin-starter-client.version>
+        <spring-cloud-starter-zuul.version>1.4.6.RELEASE</spring-cloud-starter-zuul.version>
+
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>

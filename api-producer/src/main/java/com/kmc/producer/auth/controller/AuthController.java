@@ -1,25 +1,24 @@
-package com.kmc.auth.controller;
+package com.kmc.producer.auth.controller;
 
-import com.kmc.auth.remote.AuthService;
 import com.kmc.common.auth.parameters.AuthRequestImpl;
+import com.kmc.producer.auth.IAuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author 武海升
- * @date 2018/11/2 9:50
+ * @date 2018/11/2 15:11
  */
 @RestController
-@RequestMapping(value = "auth")
-public class ApiAuthController {
+public class AuthController {
 
     @Autowired
-    private AuthService authService;
+    private IAuthService authService;
 
     @RequestMapping(value = "getAccessToken")
     public String accessToken(AuthRequestImpl authRequest) {
-        return authService.getAccessToken(authRequest);
+        return authService.getSecurityInfo(authRequest);
     }
 
 }

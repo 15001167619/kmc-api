@@ -2,13 +2,19 @@ package com.kmc.producer.auth.impl;
 
 import cn.hutool.core.util.RandomUtil;
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.kmc.common.auth.base.BaseUser;
+import com.kmc.common.auth.base.BaseVo;
 import com.kmc.common.auth.validator.dto.Credence;
 import com.kmc.common.utils.Md5Util;
 import com.kmc.producer.auth.IAuthService;
 import com.kmc.producer.auth.config.JwtProperties;
+import com.kmc.producer.modules.mapper.SysUserMapper;
+import com.kmc.producer.modules.model.entity.SysUser;
+import com.kmc.producer.redis.IRedisService;
 import io.jsonwebtoken.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -23,7 +29,16 @@ import java.util.Map;
 public class AuthServiceImpl implements IAuthService {
 
     @Autowired
+    private SysUserMapper userMapper;
+
+    @Value("${specialValidator.enable}")
+    private boolean enableValidator;
+
+    @Autowired
     private JwtProperties jwtProperties;
+
+    @Autowired
+    private IRedisService redisService;
 
     /**
      * 获取jwt失效时间
@@ -74,6 +89,43 @@ public class AuthServiceImpl implements IAuthService {
     @Override
     public Boolean isSignExpired(String sign) {
         return null;
+    }
+
+    @Override
+    public boolean validate(Credence credence) {
+        boolean flag;
+        flag = enableValidator && ("666".equals(credence.getCredenceUniqueName()) && "888".equals(credence.getCredenceCode()));
+        //是否开启特殊验证
+        if (flag) {
+            return true;
+        } else {
+            SysUser sysUser = null;
+            if(1==credence.getUserType()){
+                sysUser = userMapper.selectUserByMobile(credence.getCredenceUniqueName());
+            }
+            return sysUser==null?false:true;
+        }
+    }
+
+    @Override
+    public String getSecurityInfo(Credence authRequest) {
+        BaseVo baseVo = new BaseVo();
+        boolean validate = validate(authRequest);
+        if (validate) {
+            final String token = getAccessToken(authRequest.getCredenceUniqueName());
+            final String sign = getSign(authRequest);
+            final Long expiration = jwtProperties.getExpiration();
+            redisService.addToRedis(authRequest.getCredenceUniqueName()+"_SIGN",sign,expiration);
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("token",token);
+            jsonObject.put("sign",sign);
+            jsonObject.put("expiration",expiration);
+            baseVo.setSuccessResult(100002,jsonObject);
+            return JSON.toJSONString(baseVo);
+        } else {
+            baseVo.setResult(100001);
+            return JSON.toJSONString(baseVo);
+        }
     }
 
     /**

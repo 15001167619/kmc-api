@@ -5,11 +5,16 @@
     <resultMap id="BaseResultMap" type="com.kmc.producer.modules.model.entity.SysUser">
         <id column="user_id" property="userId"/>
         <result column="user_name" property="userName"/>
+        <result column="mobile" property="mobile"/>
     </resultMap>
 
     <select id="selectUserByUserId" resultMap="BaseResultMap">
         SELECT * FROM sys_user
         WHERE user_id = #{id}
+    </select>
+    <select id="selectUserByMobile" resultMap="BaseResultMap">
+        SELECT * FROM sys_user
+        WHERE mobile = #{mobile}
     </select>
 
 
