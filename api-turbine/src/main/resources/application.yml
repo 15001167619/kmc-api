@@ -21,7 +21,7 @@ server:
   port: 6086
 
 turbine:
-  appConfig: api-rest-doctor,api-rest-patient
+  appConfig: api-rest-doctor,api-rest-patient,api-rest-auth
   aggregator:
     clusterConfig: default
   clusterNameExpression: new String("default")
