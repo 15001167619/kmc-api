@@ -53,10 +53,21 @@ public interface IRedisService {
      */
     void  deleteRedisValueByKeys(String... keys);
 
-
+    /**
+     * get
+     * @param key
+     * @param field
+     * @return
+     */
     Object hGet(String key ,Object  field);
 
-
+    /**
+     * set
+     * @param key
+     * @param field
+     * @param value
+     * @return
+     */
     void hSet(String key ,Object  field ,Object  value);
 
     /**

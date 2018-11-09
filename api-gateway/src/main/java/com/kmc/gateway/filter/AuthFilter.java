@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 @Slf4j
 public class AuthFilter extends ZuulFilter {
 
-    final String AUTH_AUTHORIZE = "auth/authorize/getAccessToken";
-    final String AUTH_PATH = "auth";
+    private final String authorize = "auth/authorize/getAccessToken";
+    private final String authPath = "auth";
 
     @Override
     public String filterType() {
@@ -40,9 +40,9 @@ public class AuthFilter extends ZuulFilter {
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
         String requestMethodName = request.getRequestURI();
-        if(requestMethodName.contains(AUTH_AUTHORIZE)){
+        if(requestMethodName.contains(authorize)){
             return successZuul(ctx);
-        }else if(requestMethodName.contains(AUTH_PATH)){
+        }else if(requestMethodName.contains(authPath)){
             String token = request.getParameter("token");
             String sign = request.getParameter("sign");
             if (StringUtils.isNotBlank(token)  && StringUtils.isNotBlank(sign)) {
