@@ -9,15 +9,6 @@ import java.security.NoSuchAlgorithmException;
  */
 public class Md5Util {
 
-    /**
-     * 加盐参数
-     */
-    public final static String hashAlgorithmName = "MD5";
-    /**
-     * 循环次数
-     */
-    public final static int hashIterations = 1024;
-
     public static String encrypt(String source) {
         return encodeMd5(source.getBytes());
     }
