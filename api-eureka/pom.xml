@@ -7,12 +7,12 @@
     <parent>
         <artifactId>kmc-api</artifactId>
         <groupId>com.kangmochou</groupId>
-        <version>${kmc.version}</version>
+        <version>2.0.0</version>
     </parent>
 
     <groupId>com.kangmochou.kmc-api</groupId>
     <artifactId>api-eureka</artifactId>
-    <version>${kmc.version}</version>
+    <version>2.0.0</version>
     <packaging>jar</packaging>
 
     <name>api-eureka</name>
@@ -51,10 +51,13 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.plugins.version}</version>
                 <configuration>
-                    <finalName>${project.name}</finalName>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
         </plugins>

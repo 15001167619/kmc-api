@@ -7,7 +7,7 @@
     <groupId>com.kangmochou</groupId>
     <artifactId>kmc-api</artifactId>
     <packaging>pom</packaging>
-    <version>${kmc.version}</version>
+    <version>2.0.0</version>
 
     <name>kmc-api</name>
     <description>康莫愁 API 接口服务</description>
@@ -57,8 +57,7 @@
         <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <kmc.version>2.0.0</kmc.version>
-        <maven.plugins.version>3.7.0</maven.plugins.version>
+        <maven.plugins.version>3.8.0</maven.plugins.version>
         <maven.surefire.version>2.21.0</maven.surefire.version>
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
         <eureka-server.version>1.4.6.RELEASE</eureka-server.version>
