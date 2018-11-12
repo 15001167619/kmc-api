@@ -15,7 +15,7 @@ spring:
       discovery:
         service-id: api-config-server
         enabled: true
-      name: kmc-admin
+#      name: kmc-admin
       profile: dev
       label: master
 
@@ -28,6 +28,7 @@ spring:
 #/{label}/{application}-{profile}.yml
 #/{application}-{profile}.properties
 #/{label}/{application}-{profile}.properties
+# profile为dev，读取的git配置文件分支为master，同时允许从eureka上自动发现config-server这个实例。另外 spring.applicatin.name 即为配置文件的名称（即：application_xxx.yml)
 
 
 eureka:
