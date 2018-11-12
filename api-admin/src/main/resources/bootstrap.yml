@@ -29,14 +29,6 @@ spring:
 #/{application}-{profile}.properties
 #/{label}/{application}-{profile}.properties
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  endpoint:
-    health:
-      show-details: ALWAYS
 
 eureka:
   instance:
