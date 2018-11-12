@@ -9,6 +9,25 @@ spring:
     user:
       name: admin
       password: pwd666
+  cloud:
+    config:
+      fail-fast: true
+      discovery:
+        service-id: api-config-server
+        enabled: true
+      name: kmc-admin
+      profile: dev
+      label: master
+
+
+#application：应用名
+#profile：环境
+#label：版本
+#/{application}/{profile}[/{label}]
+#/{application}-{profile}.yml
+#/{label}/{application}-{profile}.yml
+#/{application}-{profile}.properties
+#/{label}/{application}-{profile}.properties
 
 management:
   endpoints:

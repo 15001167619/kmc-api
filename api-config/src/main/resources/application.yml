@@ -1,0 +1,49 @@
+server:
+  port: 6059
+
+spring:
+  application:
+    name: api-config-server
+  profiles:
+    active: dev
+  security:
+    user:
+      name: admin
+      password: pwd666
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/15001167619/kmc-api/  # 配置git仓库的地址
+          search-paths: kmc-config                      # git仓库地址下的相对地址，可以配置多个，用,分割。
+          username:                  # git仓库的账号
+          password:                         # git仓库的密码
+
+
+# 关闭安全管理
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+eureka:
+  instance:
+    metadata-map:
+      user.name: admin
+      user.password: pwd666
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
+    ip-address: 127.0.0.1
+    prefer-ip-address: true
+    instance-id: ${eureka.instance.ip-address}:${server.port}
+    hostname: localhost
+  client:
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:6080/eureka/
+
+
