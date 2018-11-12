@@ -59,6 +59,9 @@
         <java.version>1.8</java.version>
         <maven.plugins.version>3.8.0</maven.plugins.version>
         <maven.surefire.version>2.21.0</maven.surefire.version>
+        <maven-source-plugin.version>2.4</maven-source-plugin.version>
+        <maven.compile.source>1.8</maven.compile.source>
+        <maven.compile.target>1.8</maven.compile.target>
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
         <eureka-server.version>1.4.6.RELEASE</eureka-server.version>
         <spring.boot.version>2.0.4.RELEASE</spring.boot.version>
@@ -140,21 +143,35 @@
     </dependencyManagement>
 
     <build>
-        <finalName>spring-cloud</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven.plugins.version}</version>
+                <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <source>>${java.version}</source>
-                    <target>>${java.version}</target>
+                    <source>${maven.compile.source}</source>
+                    <target>${maven.compile.target}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring.boot.version}</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>${maven-source-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.8.2</version>
             </plugin>
         </plugins>
     </build>
