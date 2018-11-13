@@ -2,7 +2,7 @@
 ###################  应用服务名称  ###################
 spring:
   application:
-    name: api-rest-doctor
+    name: api-rest-patient
   profiles:
     active: dev
   security:
@@ -13,19 +13,18 @@ spring:
     admin:
       client:
         url: http://localhost:8000
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
+  cloud:
+    config:
+      fail-fast: true
+      discovery:
+        service-id: api-config-server
+        enabled: true
+      profile: dev
+      label: master
 ###################  项目启动端口  ###################
 server:
-  port: 6090
+  port: 6091
 
-
-feign:
-  hystrix:
-    enabled: true
 
 eureka:
   instance:
@@ -35,6 +34,6 @@ eureka:
       defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:6080/eureka/
 
 logging:
-  file: G:/mylog/api-doctor.log
+  file: G:/mylog/api-patient.log
 
 ---
