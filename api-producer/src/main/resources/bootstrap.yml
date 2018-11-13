@@ -13,6 +13,8 @@ spring:
     admin:
       client:
         url: http://localhost:8000
+        instance:
+          serviceBaseUrl: http://localhost:8000
   cloud:
     config:
       fail-fast: true
