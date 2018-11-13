@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: api-gateway
+  profiles:
+      active: dev
+  security:
+    user:
+      name: admin
+      password: pwd666
+  boot:
+    admin:
+      client:
+        url: http://localhost:8000
+  cloud:
+    config:
+      fail-fast: true
+      discovery:
+        service-id: api-config-server
+        enabled: true
+      profile: dev
+      label: master
+
+        
+server:
+  port: 6088
+
+
+eureka:
+  instance:
+      hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:6080/eureka/
+
+logging:
+  file: G:/mylog/api-gateway.log
+
+---
