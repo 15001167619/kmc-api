@@ -15,9 +15,10 @@ spring:
       discovery:
         service-id: api-config-server
         enabled: true
-#      name: kmc-admin
       profile: dev
       label: master
+  freemarker:
+    checkTemplateLocation: false
 
 
 #application：应用名
