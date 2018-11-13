@@ -1,0 +1,46 @@
+###################  spring配置  ###################
+###################  应用服务名称  ###################
+spring:
+  application:
+    name: api-server-producer
+  profiles:
+    active: dev
+  security:
+    user:
+      name: admin
+      password: pwd666
+  boot:
+    admin:
+      client:
+        url: "http://localhost:8000"
+  cloud:
+    config:
+      fail-fast: true
+      discovery:
+        service-id: api-config-server
+        enabled: true
+      profile: dev
+      label: master
+
+###################  项目启动端口  ###################
+server:
+  port: 6089
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:6080/eureka/
+
+logging:
+  level.root: info
+  level.com.kmc.producer: debug
+  file: G:/mylog/api-producer.log
+
+
+
+
+
+---
+

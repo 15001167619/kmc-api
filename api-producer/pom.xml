@@ -43,6 +43,11 @@
             <artifactId>spring-boot-admin-starter-client</artifactId>
             <version>${admin-starter-client.version}</version>
         </dependency>
+        <!-- 动态刷新 配置中心git仓库中的配置文件 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
