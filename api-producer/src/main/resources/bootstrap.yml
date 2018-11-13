@@ -12,7 +12,7 @@ spring:
   boot:
     admin:
       client:
-        url: "http://localhost:8000"
+        url: http://localhost:8000
   cloud:
     config:
       fail-fast: true
