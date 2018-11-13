@@ -11,20 +11,19 @@ spring:
     admin:
       client:
         url: http://localhost:8000
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
+  cloud:
+    config:
+      fail-fast: true
+      discovery:
+        service-id: api-config-server
+        enabled: true
+      profile: dev
+      label: master
+
         
 server:
   port: 6086
 
-turbine:
-  appConfig: api-rest-doctor,api-rest-patient,api-rest-auth
-  aggregator:
-    clusterConfig: default
-  clusterNameExpression: new String("default")
 
 eureka:
   instance:
