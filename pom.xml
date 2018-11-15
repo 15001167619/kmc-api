@@ -86,6 +86,7 @@
         <jjwt.version>0.9.1</jjwt.version>
         <fastjson.version>1.2.51</fastjson.version>
         <spring-boot-starter-data-redis.version>2.1.0.RELEASE</spring-boot-starter-data-redis.version>
+        <jasypt.version>2.1.0</jasypt.version>
 
     </properties>
 
@@ -113,6 +114,13 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!--配置文件加密-->
+        <dependency>
+            <groupId>com.github.ulisesbocchio</groupId>
+            <artifactId>jasypt-spring-boot-starter</artifactId>
+            <version>${jasypt.version}</version>
+        </dependency>
+
     </dependencies>
 
     <modules>
