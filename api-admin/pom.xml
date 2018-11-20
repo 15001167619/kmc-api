@@ -60,6 +60,11 @@
             <artifactId>spring-cloud-starter-eureka</artifactId>
             <version>${eureka-server.version}</version>
         </dependency>
+        <!-- 邮件通知 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
