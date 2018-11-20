@@ -15,8 +15,8 @@ spring:
       server:
         git:
           uri: https://github.com/15001167619/kmc-config.git  # 配置git仓库的地址
-          username: username                 # git仓库的账号
-          password: password                        # git仓库的密码
+          username:                  # git仓库的账号
+          password:                         # git仓库的密码
   rabbitmq:
     host: 127.0.0.1
     port: 5672
@@ -26,6 +26,8 @@ spring:
     admin:
       client:
         url: http://localhost:8000
+        instance:
+          serviceBaseUrl: http://localhost:8000
 
 
 # 关闭安全管理
